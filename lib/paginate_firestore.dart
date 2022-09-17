@@ -244,7 +244,6 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
               (context, index) {
                 if (index >= loadedState.documentSnapshots.length - 5) {
                   _cubit!.fetchPaginatedList();
-                  // return widget.bottomLoader;
                 }
                 return widget.itemBuilder(
                   context,
@@ -252,20 +251,6 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
                   index % loadedState.documentSnapshots.length,
                 );
               },
-              // semanticIndexCallback: (widget, localIndex) {
-              //   if (localIndex.isEven) {
-              //     return localIndex ~/ 2;
-              //   }
-              //   // ignore: avoid_returning_null
-              //   return null;
-              // },
-              // childCount: max(
-              //     0,
-              //     (loadedState.hasReachedEnd
-              //                 ? loadedState.documentSnapshots.length
-              //                 : loadedState.documentSnapshots.length + 1) *
-              //             2 -
-              //         1),
             ),
           ),
         ),
