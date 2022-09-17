@@ -242,19 +242,15 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                final itemIndex = index ~/ 2;
-                if (index.isEven) {
-                  if (itemIndex >= loadedState.documentSnapshots.length) {
-                    _cubit!.fetchPaginatedList();
-                    return widget.bottomLoader;
-                  }
-                  return widget.itemBuilder(
-                    context,
-                    loadedState.documentSnapshots,
-                    index % loadedState.documentSnapshots.length,
-                  );
+                if (index >= loadedState.documentSnapshots.length - 5) {
+                  _cubit!.fetchPaginatedList();
+                  // return widget.bottomLoader;
                 }
-                return widget.separator;
+                return widget.itemBuilder(
+                  context,
+                  loadedState.documentSnapshots,
+                  index % loadedState.documentSnapshots.length,
+                );
               },
               // semanticIndexCallback: (widget, localIndex) {
               //   if (localIndex.isEven) {
