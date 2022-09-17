@@ -251,7 +251,7 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
                   return widget.itemBuilder(
                     context,
                     loadedState.documentSnapshots,
-                    itemIndex,
+                    itemIndex % loadedState.documentSnapshots.length,
                   );
                 }
                 return widget.separator;
