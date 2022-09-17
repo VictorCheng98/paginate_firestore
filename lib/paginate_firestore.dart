@@ -256,13 +256,13 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
                 }
                 return widget.separator;
               },
-              semanticIndexCallback: (widget, localIndex) {
-                if (localIndex.isEven) {
-                  return localIndex ~/ 2;
-                }
-                // ignore: avoid_returning_null
-                return null;
-              },
+              // semanticIndexCallback: (widget, localIndex) {
+              //   if (localIndex.isEven) {
+              //     return localIndex ~/ 2;
+              //   }
+              //   // ignore: avoid_returning_null
+              //   return null;
+              // },
               // childCount: max(
               //     0,
               //     (loadedState.hasReachedEnd
