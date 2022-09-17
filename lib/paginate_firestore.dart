@@ -263,13 +263,13 @@ class _PaginateFirestoreState extends State<PaginateFirestore> {
                 // ignore: avoid_returning_null
                 return null;
               },
-              childCount: max(
-                  0,
-                  (loadedState.hasReachedEnd
-                              ? loadedState.documentSnapshots.length
-                              : loadedState.documentSnapshots.length + 1) *
-                          2 -
-                      1),
+              // childCount: max(
+              //     0,
+              //     (loadedState.hasReachedEnd
+              //                 ? loadedState.documentSnapshots.length
+              //                 : loadedState.documentSnapshots.length + 1) *
+              //             2 -
+              //         1),
             ),
           ),
         ),
