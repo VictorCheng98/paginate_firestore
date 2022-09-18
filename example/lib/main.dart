@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Scrollbar(
         isAlwaysShown: true,
-        child: PaginateFirestore(
+        child: PaginateFirestoreCustom(
           // Use SliverAppBar in header to make it sticky
           header: const SliverToBoxAdapter(child: Text('HEADER')),
           footer: const SliverToBoxAdapter(child: Text('FOOTER')),
